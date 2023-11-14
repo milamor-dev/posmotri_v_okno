@@ -4,15 +4,11 @@
   box-sizing: border-box;
 }
 
-
 html {
   block-size: 100%;
 }
 
 .page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -20,7 +16,10 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
 
 h1,
 h2,
@@ -43,11 +42,10 @@ ol {
 
 .content {
   display: grid;
-  height: 534px;
   grid-template-columns: 711px 399px;
   align-items: end;
   gap: 30px;
-  }
+}
 
 .result {
   display: flex;
@@ -64,6 +62,7 @@ ol {
 
 .result__video {
   width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 } 
@@ -74,7 +73,7 @@ ol {
   justify-content: flex-start;
   align-items: start;
   gap: 40px;
-  }
+}
 
 .search-form__fieldset-title {
   font-size: 18px;
@@ -107,15 +106,13 @@ ol {
   -webkit-appearance: none;
   -moz-appearance: none;
   color: #fff;
- }
+}
 
 .search-form__textfield::placeholder {
   color: rgba(255, 255, 255, 0.70);
-  }
+}
 
-.search-form__textfield:focus,
-.button:focus,
-.content__card-link {
+.search-form__textfield:focus {
   outline: none;
 }
 
@@ -168,7 +165,7 @@ ol {
 .button {
   display: flex;
   width: 194px;
-  height: 34px;
+  padding: 4px 0;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -178,6 +175,7 @@ ol {
   color: #fff;
   font-family: inherit;
   font-size: inherit;
+  font-weight: 700;
   cursor: pointer;
 }
 
@@ -188,6 +186,10 @@ ol {
 
 .more-button {
   width: 399px;
+}
+
+.button:focus {
+  outline: none;
 }
 
 .button:focus-visible {
@@ -269,14 +271,18 @@ ol {
   cursor: pointer;
 }
 
-.content__card-link_current,
-.content__card-link:active {
-  background: #545050;
+.content__card-link:focus {
+  outline: none;
 }
 
 .content__card-link:focus-visible {
   outline: 1px solid #fff;
   outline-offset: 1px;
+}
+
+.content__card-link_current,
+.content__card-link:active {
+  background: #545050;
 }
 
 .content__card-link:hover {
@@ -298,7 +304,6 @@ ol {
   line-height: 100%; /* 30px */
   text-transform: uppercase;
   text-decoration: none;
-
 }
 
 .content__video-card-description {
